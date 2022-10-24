@@ -6,7 +6,7 @@ scrape_configs:
   # nginx
   - job_name: 'prometheus'
     static_configs:
-      - targets: [ 'docker.for.linux.localhost:9090' ]
+      - targets: [ 'host.docker.internal:9090' ]
 
   - job_name: 'nginx'
     static_configs:
