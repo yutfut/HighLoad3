@@ -15,34 +15,34 @@ scrape_configs:
   # data base
   - job_name: 'data_base'
     static_configs:
-      - targets: [ 'db_host:9100' ]
+      - targets: [ '5.188.140.210:9100' ]
 
   # server 1
   - job_name: 'server1_metrics'
     static_configs:
-      - targets: [ 'server1_host:server1_port' ]
+      - targets: [ '146.185.208.33:5000' ]
 
   - job_name: 'server1'
     static_configs:
-      - targets: [ 'server1_host:9100' ]
+      - targets: [ '146.185.208.33:9100' ]
 
   # server 2
   - job_name: 'server2_metrics'
     static_configs:
-      - targets: [ 'server2_host:server2_port' ]
+      - targets: [ '5.188.141.6:5000' ]
 
   - job_name: 'server1'
     static_configs:
-      - targets: [ 'server2_host:9100' ]
+      - targets: [ '5.188.141.6:9100' ]
 
   # server 3
   - job_name: 'server3_metrics'
     static_configs:
-      - targets: [ 'server3_host:server3_port' ]
+      - targets: [ '5.188.142.88:5000' ]
 
   - job_name: 'server1'
     static_configs:
-      - targets: [ 'server3_host:9100' ]
+      - targets: [ '5.188.142.88:9100' ]
 
 rule_files:
   - 'alerts.yml'
