@@ -1,54 +1,54 @@
 global:
   scrape_interval:     10s
-#  evaluation_interval: 10s
+  evaluation_interval: 10s
 
 scrape_configs:
   # nginx
   - job_name: 'prometheus'
     static_configs:
-      - targets: [ 'host.docker.internal:9090' ]
+      - targets: [ '127.0.0.1:9090' ]
 
   - job_name: 'nginx'
     static_configs:
-      - targets: [ 'docker.for.linux.localhost:9100' ]
+      - targets: [ 'node-exporter:9100' ]
 
-  # data base
-  - job_name: 'data_base'
-    static_configs:
-      - targets: [ '5.188.140.210:9100' ]
-
-  # server 1
-  - job_name: 'server1_metrics'
-    static_configs:
-      - targets: [ '146.185.208.33:5000' ]
-
-  - job_name: 'server1'
-    static_configs:
-      - targets: [ '146.185.208.33:9100' ]
-
-  # server 2
-  - job_name: 'server2_metrics'
-    static_configs:
-      - targets: [ '5.188.141.6:5000' ]
-
-  - job_name: 'server1'
-    static_configs:
-      - targets: [ '5.188.141.6:9100' ]
-
-  # server 3
-  - job_name: 'server3_metrics'
-    static_configs:
-      - targets: [ '5.188.142.88:5000' ]
-
-  - job_name: 'server1'
-    static_configs:
-      - targets: [ '5.188.142.88:9100' ]
-
-#rule_files:
-#  - 'alerts.yml'
+#  # data base
+#  - job_name: 'data_base'
+#    static_configs:
+#      - targets: [ '5.188.140.210:9100' ]
 #
-#alerting:
-#  alertmanagers:
-#    - static_configs:
-#        - targets:
-#            - alertmanager:9093
+#  # server 1
+#  - job_name: 'server1_metrics'
+#    static_configs:
+#      - targets: [ '146.185.208.33:5000' ]
+#
+#  - job_name: 'server1'
+#    static_configs:
+#      - targets: [ '146.185.208.33:9100' ]
+#
+#  # server 2
+#  - job_name: 'server2_metrics'
+#    static_configs:
+#      - targets: [ '5.188.141.6:5000' ]
+#
+#  - job_name: 'server1'
+#    static_configs:
+#      - targets: [ '5.188.141.6:9100' ]
+#
+#  # server 3
+#  - job_name: 'server3_metrics'
+#    static_configs:
+#      - targets: [ '5.188.142.88:5000' ]
+#
+#  - job_name: 'server1'
+#    static_configs:
+#      - targets: [ '5.188.142.88:9100' ]
+
+rule_files:
+  - 'alerts.yml'
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - alertmanager:9093
