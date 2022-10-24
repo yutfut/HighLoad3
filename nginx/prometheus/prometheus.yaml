@@ -3,43 +3,43 @@ global:
   evaluation_interval: 10s
 
 scrape_configs:
-  # nginx
-  - job_name: 'prometheus'
-    static_configs:
-      - targets: [ 'docker.for.linux.localhost:9090' ]
+#  # nginx
+#  - job_name: 'prometheus'
+#    static_configs:
+#      - targets: [ 'docker.for.linux.localhost:9090' ]
 
   - job_name: 'nginx'
     static_configs:
       - targets: [ 'node-exporter:9100' ]
 
-#  # data base
-#  - job_name: 'data_base'
-#    static_configs:
-#      - targets: [ '5.188.140.210:9100' ]
-#
-#  # server 1
-#  - job_name: 'server1_metrics'
-#    static_configs:
-#      - targets: [ '146.185.208.33:5000' ]
-#
-#  - job_name: 'server1'
-#    static_configs:
-#      - targets: [ '146.185.208.33:9100' ]
-#
-#  # server 2
-#  - job_name: 'server2_metrics'
-#    static_configs:
-#      - targets: [ '5.188.141.6:5000' ]
-#
-#  - job_name: 'server1'
-#    static_configs:
-#      - targets: [ '5.188.141.6:9100' ]
-#
-#  # server 3
-#  - job_name: 'server3_metrics'
-#    static_configs:
-#      - targets: [ '5.188.142.88:5000' ]
-#
-#  - job_name: 'server1'
-#    static_configs:
-#      - targets: [ '5.188.142.88:9100' ]
+  # data base
+  - job_name: 'data_base'
+    static_configs:
+      - targets: [ '5.188.140.210:9100' ]
+
+  # server 1
+  - job_name: 'server1_metrics'
+    static_configs:
+      - targets: [ '146.185.208.33:5000' ]
+
+  - job_name: 'server1'
+    static_configs:
+      - targets: [ '146.185.208.33:9100' ]
+
+  # server 2
+  - job_name: 'server2_metrics'
+    static_configs:
+      - targets: [ '5.188.141.6:5000' ]
+
+  - job_name: 'server2'
+    static_configs:
+      - targets: [ '5.188.141.6:9100' ]
+
+  # server 3
+  - job_name: 'server3_metrics'
+    static_configs:
+      - targets: [ '5.188.142.88:5000' ]
+
+  - job_name: 'server3'
+    static_configs:
+      - targets: [ '5.188.142.88:9100' ]
