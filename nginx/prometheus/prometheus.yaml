@@ -3,10 +3,10 @@ global:
   evaluation_interval: 10s
 
 scrape_configs:
-#  # nginx
-#  - job_name: 'prometheus'
-#    static_configs:
-#      - targets: [ 'docker.for.linux.localhost:9090' ]
+  # nginx
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: [ '127.0.0.1:9090' ]
 
   - job_name: 'nginx'
     static_configs:
